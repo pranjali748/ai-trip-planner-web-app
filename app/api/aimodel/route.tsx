@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from 'openai';
-export const openai = new OpenAI({
+import { openai } from "@/lib/openrouter";
+/*export const openai = new OpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
   apiKey: process.env.OPENROUTER_API_KEY,
   defaultHeaders: {
     "HTTP-Referer": "http://localhost:3000", // 👈 required for OpenRouter
     "X-Title": "AI Trip Planner",             // 👈 required for OpenRouter
   },
-});
+});*/
 const PROMPT=`You are an AI Trip Planner Agent. Your goal is to help the user plan  a trip by asking one relevant trip-related question at a time.
 Only ask questions about the following details in order, and wait for the user's answer before asking the next:
 1.Starting location(source)
